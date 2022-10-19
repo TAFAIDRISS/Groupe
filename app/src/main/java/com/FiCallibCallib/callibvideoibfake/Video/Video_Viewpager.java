@@ -1,6 +1,7 @@
 package com.FiCallibCallib.callibvideoibfake.Video;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import com.FiCallibCallib.callibvideoibfake.R;
@@ -21,6 +22,7 @@ public class Video_Viewpager extends AppCompatActivity {
 
         videomodels = new ArrayList<>();
         viewPager2 = findViewById(R.id.viewpagerr);
+       // viewPager2.setPagingEnabled(false);
 
 
         videomodels.add(new Videomodel("android.resource://" +getPackageName() + "/" + R.raw.vid1));
