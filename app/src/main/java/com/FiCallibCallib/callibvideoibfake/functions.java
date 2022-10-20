@@ -1,12 +1,19 @@
 package com.FiCallibCallib.callibvideoibfake;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 
 import com.FiCallibCallib.config;
 import com.airbnb.lottie.LottieAnimationView;
+import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrConfig;
 import com.r0adkll.slidr.model.SlidrInterface;
+import com.r0adkll.slidr.model.SlidrListener;
+import com.r0adkll.slidr.model.SlidrPosition;
 
 public class functions {
 
@@ -45,4 +52,6 @@ public class functions {
 
 
     }
+
+
 }
