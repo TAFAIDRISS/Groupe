@@ -12,7 +12,9 @@ import android.widget.LinearLayout;
 
 import com.FiCallibCallib.callibvideoibfake.Ads_admob.Admob;
 import com.FiCallibCallib.callibvideoibfake.R;
-import com.FiCallibCallib.callibvideoibfake.Video.Video_Viewpager;
+import com.FiCallibCallib.callibvideoibfake.Video.videoplayer_activity;
+import com.FiCallibCallib.callibvideoibfake.functions;
+import com.FiCallibCallib.callibvideoibfake.my_own_ads_2021;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
 public class MainActivity_callgirle extends AppCompatActivity {
@@ -50,7 +52,8 @@ public class MainActivity_callgirle extends AppCompatActivity {
             }
         },100);
 
-
+        my_own_ads_2021.showbanner(this);
+        my_own_ads_2021.showbanner2(this);
     }
 
     private void StartCalling() {
@@ -59,7 +62,7 @@ public class MainActivity_callgirle extends AppCompatActivity {
             @Override
             public void OnAdFinishid() {
 
-                Intent into = new Intent(getApplicationContext(),Video_Viewpager.class);
+                Intent into = new Intent(getApplicationContext(), videoplayer_activity.class);
                 startActivity(into);
                 finish();
             }

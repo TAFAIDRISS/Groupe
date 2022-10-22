@@ -26,6 +26,8 @@ public class Spalsh_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spalsh);
 
+
+        config.getdata(this);
         GetData.ConncetDataURL(this);
 
         progressBar = findViewById(R.id.pb_splash);
