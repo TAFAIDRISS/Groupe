@@ -5,4 +5,11 @@
         <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
         <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
     </style>
+
+
+    <style name="Theme.CallibVideoibFake.SlidrActivityTheme">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowBackground">@color/gnt_red</item>
+
+    </style>
 </resources>

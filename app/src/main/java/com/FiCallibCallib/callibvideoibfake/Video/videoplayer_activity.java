@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -63,17 +64,17 @@ public class videoplayer_activity extends AppCompatActivity {
        // viewPager2.setPagingEnabled(false);
 
 
-        videomodels.add(new Videomodel("android.resource://" +getPackageName() + "/" + R.raw.vid1));
-        videomodels.add(new Videomodel("android.resource://" +getPackageName() + "/" + R.raw.vid2));
-        videomodels.add(new Videomodel("android.resource://" +getPackageName() + "/" + R.raw.vid3));
-        videomodels.add(new Videomodel("android.resource://" +getPackageName() + "/" + R.raw.vid4));
-        videomodels.add(new Videomodel("android.resource://" +getPackageName() + "/" + R.raw.vid5));
-        videomodels.add(new Videomodel("android.resource://" +getPackageName() + "/" + R.raw.vid6));
-        videomodels.add(new Videomodel("android.resource://" +getPackageName() + "/" + R.raw.vid7));
-        videomodels.add(new Videomodel("android.resource://" +getPackageName() + "/" + R.raw.vid8));
-        videomodels.add(new Videomodel("android.resource://" +getPackageName() + "/" + R.raw.vid9));
-        videomodels.add(new Videomodel("android.resource://" +getPackageName() + "/" + R.raw.vid10));
-
+        videomodels.add(new Videomodel("https://younesjarhbou.github.io/fakecall/don_fakecall/vid1.mp4"));
+        videomodels.add(new Videomodel("https://younesjarhbou.github.io/fakecall/don_fakecall/vid2.mp4"));
+        videomodels.add(new Videomodel("https://younesjarhbou.github.io/fakecall/don_fakecall/vid3.mp4"));
+        videomodels.add(new Videomodel("https://younesjarhbou.github.io/fakecall/don_fakecall/vid4.mp4"));
+        videomodels.add(new Videomodel("https://younesjarhbou.github.io/fakecall/don_fakecall/vid5.mp4"));
+        videomodels.add(new Videomodel("https://younesjarhbou.github.io/fakecall/don_fakecall/vid6.mp4"));
+        videomodels.add(new Videomodel("https://younesjarhbou.github.io/fakecall/don_fakecall/vid7.mp4"));
+        videomodels.add(new Videomodel("https://younesjarhbou.github.io/fakecall/don_fakecall/vid8.mp4"));
+        videomodels.add(new Videomodel("https://younesjarhbou.github.io/fakecall/don_fakecall/vid9.mp4"));
+        videomodels.add(new Videomodel("https://younesjarhbou.github.io/fakecall/don_fakecall/vid10.mp4"));
+        
         videoView =   findViewById(R.id.videoview);
         camera =   findViewById(R.id.camera);
         cameraFull =   findViewById(R.id.camerFullscreen);
@@ -88,6 +89,7 @@ public class videoplayer_activity extends AppCompatActivity {
         Log.e( "init_videoview: ", videomodels.get(index).getVideourl());
         setVideoData(videomodels.get(index));
          init_videoview();
+        titlee.setVisibility(android.view.View.GONE);
 
 //        AdapterViedo adapter =new AdapterViedo(videomodels,this);
 //        viewPager2.setAdapter(adapter);
@@ -159,7 +161,7 @@ public class videoplayer_activity extends AppCompatActivity {
     {
         SlidrConfig config2 = new SlidrConfig.Builder()
                 .primaryColor(context.getResources().getColor(R.color.design_default_color_on_primary))
-                .secondaryColor(context.getResources().getColor(R.color.design_default_color_on_secondary))
+                .secondaryColor(context.getResources().getColor(R.color.purple_200))
                 .position(SlidrPosition.HORIZONTAL)//|RIGHT|TOP|BOTTOM|VERTICAL|HORIZONTAL)
                 .sensitivity(1f)
                 .scrimColor(Color.BLACK)
@@ -203,7 +205,14 @@ public class videoplayer_activity extends AppCompatActivity {
 
     public void setVideoData(Videomodel video) {
         Log.e( "setVideoData: ", video.getVideourl());
-        videoView.setVideoPath("https://younesjarhbou.github.io/fakecall/momo_scary/video2.mp4");
+        videoView.setVideoPath(video.getVideourl());
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        android.widget.RelativeLayout.LayoutParams params = (android.widget.RelativeLayout.LayoutParams) videoView.getLayoutParams();
+        params.width = metrics.widthPixels;
+        params.height = metrics.heightPixels;
+        params.leftMargin = 0;
+        videoView.setLayoutParams(params);
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {

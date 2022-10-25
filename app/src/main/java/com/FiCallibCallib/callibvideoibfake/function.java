@@ -226,7 +226,8 @@ public class function {
         d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         d.setCancelable(false);
         Window win = d.getWindow();
-        win.setGravity(Gravity.CENTER);
+        win.setGravity(Gravity.FILL);
+
 
         win.getAttributes().windowAnimations = R.style.mydialog;
 

@@ -20,8 +20,7 @@
         android:scaleType="fitXY"
         app:lottie_autoPlay="true"
 
-        app:lottie_loop="true"
-        app:lottie_url="">
+        app:lottie_loop="true">
 
 
     </com.airbnb.lottie.LottieAnimationView>

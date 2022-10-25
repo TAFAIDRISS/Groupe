@@ -45,6 +45,7 @@ dependencies {
 
     implementation 'com.r0adkll:slidableactivity:2.1.0'
     implementation 'androidx.media2:media2:1.0.0-alpha04'
+    implementation 'androidx.media2:media2-widget:1.2.1'
     def lottieVersion = '5.2.0'
     implementation "com.airbnb.android:lottie:$lottieVersion"
     implementation project(':nativetemplates')
